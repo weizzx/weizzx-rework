@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import "tailwindcss";
+
+
+@theme {
+  --color-text: #FAF9F6;
+  --color-background: #141014;
+  --color-primary: #990099;
+  --color-secondary: #4d004c;
+  --color-accent: #ff00ff,
+
+  --text-sm: 0.750rem,
+  --text-base: 1rem,
+  --text-xl: 1.333rem,
+  --text-2xl: 1.777rem,
+  --text-3xl: 2.369rem,
+  --text-4xl: 3.158rem,
+  --text-5xl: 4.210rem,
+
+  --font-weight-normal: 400,
+  --font-weight-bold: 700
+}
+
+:root {
+  --content-max-width: 1200px;
+  --padding-inline: 2rem;
+
+  color-scheme: light dark;
+  color: var(--color-text);
+  background-color: var(--color-background);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Set wrapper root defaults */
+.wrapper {
+    width: min(var(--content-max-width), 100% - (var(--padding-inline) * 2));
+    margin-inline: auto;
+}
+
+/* Remove default margin */
+* {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+}
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core html body defaults */
+html,
+body {
+    height: 100%;
+}
+
+body {
+  font-family: "Ubuntu Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+h1 {
+  font-family: "Source Code Pro", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: var(--text-5xl);
+  line-height: 1.1;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: var(--color-background);
+    background-color: var(--color-text);
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture,
+svg,
+video {
+  max-width: 100%;
+  display: block;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
